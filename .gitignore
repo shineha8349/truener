@@ -1,0 +1,13 @@
+# Next.js
+truener/.next/
+truener/node_modules/
+truener/.env.local
+truener/.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
