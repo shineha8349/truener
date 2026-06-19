@@ -32,7 +32,6 @@ export async function proxy(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  // 未ログインでアプリ内ページにアクセス → ログインページへ
   const isPublicPath =
     pathname === "/" ||
     pathname.startsWith("/login") ||
@@ -44,7 +43,6 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // ログイン済みでログインページにアクセス → ホームへ
   if (user && pathname === "/login") {
     const url = request.nextUrl.clone();
     url.pathname = "/home";

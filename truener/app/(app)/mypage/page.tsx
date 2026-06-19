@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import LogoutButton from "@/components/auth/LogoutButton";
 import { Camera, Edit2, ShieldCheck, CreditCard, Bell, HelpCircle, LogOut, ChevronRight, Crown } from "lucide-react";
 import { mockCurrentUser } from "@/lib/mock-data";
 import TagBadge from "@/components/ui/TagBadge";
@@ -192,13 +193,7 @@ export default function MyPage() {
 
         {/* Logout */}
         <div className="bg-white border-y border-[#E5E5E5] mt-3">
-          <button
-            className="w-full flex items-center gap-3 px-4 py-3.5 hover:bg-[#FFF0F0] transition-colors text-[#FF6B6B]"
-            aria-label="ログアウト"
-          >
-            <LogOut size={20} className="shrink-0" />
-            <span className="text-sm font-medium">ログアウト</span>
-          </button>
+          <LogoutButton />
         </div>
       </div>
 
