@@ -34,7 +34,7 @@ export default function LandingPage() {
       <div className="max-w-lg mx-auto px-6 -mt-10">
         <div className="bg-white rounded-2xl shadow-lg p-6">
           <Link
-            href="/home"
+            href="/login"
             className="w-full flex items-center justify-center gap-2 bg-[#FF6B6B] hover:bg-[#FF5252] text-white font-semibold py-4 rounded-full transition-colors text-base"
             aria-label="無料で登録する"
           >
@@ -127,7 +127,7 @@ export default function LandingPage() {
       {/* Bottom CTA */}
       <div className="max-w-lg mx-auto px-6 pb-16 text-center">
         <Link
-          href="/home"
+          href="/login"
           className="inline-flex items-center gap-2 bg-[#FF6B6B] hover:bg-[#FF5252] text-white font-semibold px-8 py-4 rounded-full transition-colors"
         >
           <Heart size={18} fill="white" />
