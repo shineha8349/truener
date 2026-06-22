@@ -1,19 +1,16 @@
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import BottomNav from "@/components/layout/BottomNav";
-import { createClient } from "@/lib/supabase/server";
 
 export default async function AppLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const { userId } = await auth();
 
-  if (!user) {
-    redirect("/login");
+  if (!userId) {
+    redirect("/sign-in");
   }
 
   return (
