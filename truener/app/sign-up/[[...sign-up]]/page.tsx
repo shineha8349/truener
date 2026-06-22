@@ -9,6 +9,7 @@ export default function SignUpPage() {
           <p className="text-[#888] text-sm">趣味で繋がる、本気の出会い</p>
         </div>
         <SignUp
+          forceRedirectUrl="/home"
           appearance={{
             elements: {
               rootBox: "w-full",
