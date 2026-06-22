@@ -1,4 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 const isPublicRoute = createRouteMatcher([
   "/",
@@ -8,6 +9,10 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware(async (auth, request) => {
+  // LP is completely public — skip Clerk entirely
+  if (request.nextUrl.pathname === "/") {
+    return NextResponse.next();
+  }
   if (!isPublicRoute(request)) {
     await auth.protect();
   }
