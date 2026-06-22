@@ -21,13 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      signInUrl="/sign-in"
-      signUpUrl="/sign-up"
-    >
-      <html lang="ja">
-        <body className={notoSansJP.className}>{children}</body>
-      </html>
-    </ClerkProvider>
+    <html lang="ja">
+      <body className={notoSansJP.className}>
+        <ClerkProvider>
+          {children}
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
